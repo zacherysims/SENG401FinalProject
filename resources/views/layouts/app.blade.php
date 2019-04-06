@@ -26,12 +26,17 @@
         margin-bottom: 30px;
 
     }
+
+    .fullscreen {
+        min-height: 100vh;
+        height: 100%;
+    }
     </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+            <div class="container" >
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'SpaceBook') }}
                 </a>
