@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
     .m-b-md {
+        color: white;
         font-size: 84px;
         text-align: center;
         margin-bottom: 30px;
@@ -86,7 +87,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background-color: black">
             @yield('content')
         </main>
     </div>
