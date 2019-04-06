@@ -30,12 +30,13 @@
     .fullscreen {
         min-height: 100vh;
         height: 100%;
+        padding: 0px;
     }
     </style>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+    <div id="app" style="margin: 0px; padding: 0px;">
+        <nav style ="background-color: #292b2d ; "class="navbar navbar-expand-md navbar-dark navbar-laravel">
             <div class="container" >
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'SpaceBook') }}
@@ -92,7 +93,7 @@
             </div>
         </nav>
 
-        <main class="py-4" style="background-color: black">
+        <main class="py-4" style=" margin: 0 !important; padding: 0 !important;">
             @yield('content')
         </main>
     </div>

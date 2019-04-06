@@ -1,6 +1,6 @@
 @extends('layouts.app')
     @section('content')
-    <div class="fullscreen" style="background-image: url(https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/hubbleprimary.png?itok=dXJpc1tP&resize=1100x1100)">
+    <div class="fullscreen" style="background-image: url(https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/hubbleprimary.png?itok=dXJpc1tP&resize=1100x1100); background-size: cover;">
                 <div class="title m-b-md">
                  {{ config('app.name', 'SpaceBook') }}
                 </div>
