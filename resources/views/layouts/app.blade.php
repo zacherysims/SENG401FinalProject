@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
     .m-b-md {
-        color: white;
+        color: #292b2d;
         font-size: 84px;
         text-align: center;
         margin-bottom: 30px;
