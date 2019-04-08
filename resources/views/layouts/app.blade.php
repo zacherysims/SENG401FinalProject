@@ -19,22 +19,39 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
-    .m-b-md {
+    .title {
         color: #292b2d;
         font-size: 84px;
         text-align: center;
         margin-bottom: 30px;
 
     }
-
+    
+    .page_heading{
+        color: #292b2d;
+        font-weight: bold;
+        text-align: center;
+    }
+    
     .fullscreen {
         min-height: 100vh;
         height: 100%;
         padding: 0px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
 
     @yield('styles')
     </style>
+    
+    <!-- Scripts --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        @yield('scripts')
+    </script>
+
 </head>
 <body>
     <div id="app" style="margin: 0px; padding: 0px;">
