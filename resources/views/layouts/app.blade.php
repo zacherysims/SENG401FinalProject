@@ -68,11 +68,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                                 
-                        <li class = "nav-item"><a class= "nav-link" href="default.asp">Home</a></li>
                         <li class = "nav-item"><a class= "nav-link" href="/news">News</a></li>
                         <li class = "nav-item"><a class= "nav-link" href="/search">Search</a></li>
                         <li class = "nav-item"><a class= "nav-link" href="default.asp">Forum</a></li>
-                        <li class = "nav-item"><a class= "nav-link" href="default.asp">Picture of the Day</a></li>
+                        <li class = "nav-item"><a class= "nav-link" href="/picoftheday">Picture of the Day</a></li>
 
                     </ul>
 
