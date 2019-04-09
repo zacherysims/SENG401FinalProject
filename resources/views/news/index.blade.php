@@ -48,9 +48,9 @@
 @section('scripts')
     $(document).ready(function() {
 
-    $('.artic   le').click(function() {
-        window.location = $(this).data("url");
-    });
+        $('.article').click(function() {
+            window.location = $(this).data("url");
+        });
 
     });
 

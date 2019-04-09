@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/news', 'NewsController@index');
 
 Route::get('/picoftheday', 'PicDayController@index');
+
+Route::get('/forum', 'ThreadController@index');
