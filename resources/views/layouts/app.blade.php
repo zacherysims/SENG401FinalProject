@@ -69,8 +69,8 @@
                     <ul class="navbar-nav mr-auto">
                                 
                         <li class = "nav-item"><a class= "nav-link" href="/news">News</a></li>
-                        <li class = "nav-item"><a class= "nav-link" href="default.asp">Search</a></li>
                         <li class = "nav-item"><a class= "nav-link" href="/forum">Forum</a></li>
+                        <li class = "nav-item"><a class= "nav-link" href="/search">Search</a></li>
                         <li class = "nav-item"><a class= "nav-link" href="/picoftheday">Picture of the Day</a></li>
 
                     </ul>

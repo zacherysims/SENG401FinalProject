@@ -19,7 +19,7 @@
     @endsection 
     @section('content')
     <div class="fullscreen" style="background-image: url(nebula.jpg); background-size: cover; padding: 5%; padding-left: 20%; padding-right: 20%;">
-    <h1 class="page_heading"> Space Pic of the Day </h1>
+    <h1 class="page_heading"> Picture of the Day </h1>
                 <div class="title">
                  <div class="picdaycontainer"> 
                  <h2> {{$picture['title']}}</h2>
