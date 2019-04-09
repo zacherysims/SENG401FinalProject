@@ -41,7 +41,7 @@
 @section('content')
 <h1 class = "page_heading">Search the Cosmos (or just the site)</h1>                
 
-<form class ="searchArea" action="/results">
+<form class ="div_element" action="/results">
 Keyword: <br>
 <input class="searchbar" type="text" name="query"><br>
 <span>

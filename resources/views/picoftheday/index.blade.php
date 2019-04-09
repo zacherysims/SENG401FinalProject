@@ -16,12 +16,12 @@
         img.picday {
             max-height: 50%;
             max-width: 100%;
-            border-radius: 15px;
+            border-radius: 5px;
         }
     @endsection
     @section('content')
     <h1 class="page_heading"> Picture of the Day </h1>
-                <div class="title">
+                <div class="div_element">
                  <div class="picdaycontainer">
                  <h2> {{$picture['title']}}</h2>
                  <p style="font-size:12px; text-align: left;">{{$picture['copyright']}}

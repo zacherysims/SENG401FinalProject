@@ -5,33 +5,23 @@
         color: lightgray;
     }
 
-    .article {
-        background-color: #292b2d;
-        color: lightgray;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        overflow: auto;
-        padding: 10px;
-        border-radius: 25px;
-        opacity: 0.8;
-    }
-    .article:hover {background-color: #505050;}
+    .div_element:hover {background-color: #505050;}
 
     img {
         float: left;
         margin-right: 10px;
-        border-radius: 15px;
+        border-radius: 5px;
     }
 
 @endsection
 
 @section('content')
-<div class="fullscreen" style="background-image: url(nebula.jpg); padding: 5%;">
+
 <h1 class = "page_heading">Latest Hubble News Releases</h1>
 
 
 @foreach($articles as $article)
-        <a href="javascript:void(0)" style="text-decoration: none;"><div class = 'article' data-url={{$article['link']}}>
+        <a href="javascript:void(0)" style="text-decoration: none;"><div class = 'div_element article' data-url={{$article['link']}}>
             <h2>{{$article['title']}}</h2>
             @if(count($article)===9)
                 <img src = {{$article['thumbnail']}}></img>
@@ -45,7 +35,7 @@
     @endforeach
 
 
-</div>
+
 @endsection
 
 @section('scripts')

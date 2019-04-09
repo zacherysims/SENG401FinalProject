@@ -4,19 +4,7 @@
     h2, p {
         color: lightgray;
     }
-
-    .submit {
-        background-color: #292b2d; 
-        color: lightgray;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        overflow: auto;
-        padding: 10px;
-        width: 50%;
-    }
-    
+    .div_element:hover{}
     input, textarea{
         width: 100%;
         background-color: #505050;
@@ -32,7 +20,7 @@
 
 @section('content')
 <h1 class="page_heading">Create a New Thread</h1>
-<div class = 'submit' >
+<div class = 'div_element' >
     <form method="POST" action="/forum">
         @csrf
         <div class="form-group">

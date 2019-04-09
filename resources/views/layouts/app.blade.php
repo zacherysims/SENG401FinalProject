@@ -47,9 +47,25 @@
         color: #292b2d;
         font-weight: bold;
         text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
         text-shadow: 0px 0px 10px white;
 
     }
+
+    .div_element {
+        background-color: #292b2d;
+        opacity: 0.9;
+        color: lightgray;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: auto;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
     
     .fullscreen {
         min-height: 100vh;
