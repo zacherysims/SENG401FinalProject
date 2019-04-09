@@ -25,21 +25,29 @@
         font-size: 84px;
         text-align: center;
         margin-bottom: 30px;
-        text-shadow: 0px 5px 10px white;
-        -webkit-animation: mymove 5s infinite;
-        animation: mymove 5s infinite;
+        text-shadow: 0px 0px 10px white;
+        animation: mymove 25s infinite;
 
     }
 
     @keyframes mymove {
-    50% {text-shadow: 10px 20px 30px #FF4AED;}
+    0% {text-shadow: 0px 0px 10px white;}    
+    10% {text-shadow: 0px 0px 30px #FF4AED;}
+    20% {text-shadow: 0px 0px 10px white;}
+    30% {text-shadow: 0px 0px 30px #39D9F9;}
+    40% {text-shadow: 0px 0px 10px white;}
+    50% {text-shadow: 0px 0px 30px #F9D139;}
+    60% {text-shadow: 0px 0px 10px white;}
+    70% {text-shadow: 0px 0px 30px #6439F9;}
+    80% {text-shadow: 0px 0px 10px white;}
+    90% {text-shadow: 0px 0px 30px #68FF7B;}
     }
     
     .page_heading{
         color: #292b2d;
         font-weight: bold;
         text-align: center;
-        text-shadow: 0px 5px 10px white;
+        text-shadow: 0px 0px 10px white;
 
     }
     

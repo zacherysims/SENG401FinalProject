@@ -41,7 +41,17 @@ class ThreadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'Title' => 'required|string|max:255',
+            'Content' => 'required|string|max:1024'
+          ]);
+          $validated['title'] = $validated['Title'];
+          $validated['content'] = $validated['Content'];
+          unset($validated['Title']);
+          unset($validated['Content']);
+          $validated['user'] = auth()->user()->email;
+          Thread::create($validated);
+          return redirect('/forum');
     }
 
     /**

@@ -2,12 +2,12 @@
 
 @section('styles')
     h2, p {
-        color: lightgray;
+        color: white;
     }
 
     .thread {
         background-color: #292b2d; 
-        color: lightgray;
+        color: white;
         margin-top: 20px;
         margin-bottom: 20px;
         overflow: auto;
@@ -23,6 +23,7 @@
 @endsection
 
 @section('content')
-
-    <h1 class="page_heading"> {{$thread->title}}</h1>
+<div class ="thread">
+    <h1 class="thread"> {{$thread->title}}</h1>
+    </div>
 @endsection
