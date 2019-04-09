@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateThreadTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateThreadTable extends Migration
      */
     public function up()
     {
-        Schema::create('thread', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('thread_id');
             $table->string('user');
             $table->text('content');
             $table->timestamp('created_at');
@@ -28,6 +29,6 @@ class CreateThreadTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thread');
+        Schema::dropIfExists('comment');
     }
 }

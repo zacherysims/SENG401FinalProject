@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Thread;
 
 class ThreadController extends Controller
 {
@@ -13,7 +14,13 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        return view('forum.index');;
+        $threads = Thread::all();
+        foreach($threads as $thread) {
+            $total_number = 10;
+            $digits = $total_number - strlen($thread->id);
+            $thread->str = str_pad($thread->id, $digits, "0", STR_PAD_LEFT);
+        }
+        return view('forum.index', compact('threads'));;
     }
 
     /**
