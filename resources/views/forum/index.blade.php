@@ -24,25 +24,8 @@
 
 @section('content')
 <div class="fullscreen" style="background-image: url(nebula.jpg); padding: 5%;">
-<h1 class = "page_heading">Latest Hubble News Releases</h1>                
-  
-   
-@foreach($articles as $article)
-        <a href="javascript:void(0)" style="text-decoration: none;"><div class = 'article' data-url={{$article['link']}}>
-            <h2>{{$article['title']}}</h2>
-            @if(count($article)===9)
-                <img src = {{$article['thumbnail']}}></img>
-            @endif
-            {{$article['pub_date']}}
-            <br>
-            <br>
-            {{$article['description']}}
-        </div>
-        </a>
-    @endforeach
+<h1 class = "page_heading">Forum</h1>                
 
-
-</div>
 @endsection
 
 @section('scripts')

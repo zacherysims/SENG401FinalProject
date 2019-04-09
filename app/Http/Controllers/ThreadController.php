@@ -13,7 +13,7 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        dd('Ur mum super fucking gay');
+        return view('forum.index');;
     }
 
     /**

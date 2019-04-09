@@ -45,8 +45,12 @@
 <form class ="searchArea" action="/results">
 Keyword: <br>
 <input class="searchbar" type="text" name="query"><br>
-<input class="coolradiobutton" style="margin-top: 20px;" type="radio" name="type" value="News" checked>News<br>
-<input class="coolradiobutton" type="radio" name="type" value="Forums">Forums<br>
+<span>
+<input class="coolradiobutton" style="margin-top: 20px;" type="radio" name="type" value="News" checked>News
+</span>
+<span>
+<input class="coolradiobutton" type="radio" name="type" value="Forums">Forums
+</span>
 <input class="coolradiobutton" type="radio" name="type" value="Pictures">Pictures<br>
 <input type="submit" style="margin-top: 20px; padding-left: 20px; padding-right: 20px;" name="search" value="Search">
 </form>
