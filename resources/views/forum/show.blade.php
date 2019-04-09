@@ -23,14 +23,6 @@
 @endsection
 
 @section('content')
-<h1 class = "page_heading">Forum</h1>                
-@foreach($threads as $thread)
-<a href="/forum/show/{{$thread->id}}" style="text-decoration: none;"><div class = 'thread' >
-            <h2>{{$thread->title}} <span style="float: right; font-size:10px;">Thread ID: {{$thread->str}} </span></h2>
-            Submitted by User: {{$thread->getUser()}}
-            <br>
-            <br>
-        </div>
-        </a>
-@endforeach
+
+    <h1 class="page_heading"> {{$thread->title}}}</h1>
 @endsection
