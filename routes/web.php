@@ -24,4 +24,10 @@ Route::get('/news', 'NewsController@index');
 Route::get('/search', 'SearchController@index');
 
 Route::get('/results', 'resultscontroller@index');
+
 Route::get('/picoftheday', 'PicDayController@index');
+
+Route::get('/forum', 'ThreadController@index');
+Route::get('/forum', 'ThreadController@index');
+Route::get('/forum/create', 'ThreadController@create');
+Route::get('/forum/show/{id}' ,'ThreadController@show');
