@@ -19,18 +19,28 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
+
     .title {
         color: #292b2d;
         font-size: 84px;
         text-align: center;
         margin-bottom: 30px;
+        text-shadow: 0px 5px 10px white;
+        -webkit-animation: mymove 5s infinite;
+        animation: mymove 5s infinite;
 
+    }
+
+    @keyframes mymove {
+    50% {text-shadow: 10px 20px 30px #FF4AED;}
     }
     
     .page_heading{
         color: #292b2d;
         font-weight: bold;
         text-align: center;
+        text-shadow: 0px 5px 10px white;
+
     }
     
     .fullscreen {
@@ -112,7 +122,7 @@
         </nav>
 
         <main class="py-4" style=" margin: 0 !important; padding: 0 !important;">
-            <div class="fullscreen" style="background-image: url(nebula.jpg); background-size: cover; padding: 5%;">
+            <div class="fullscreen" style="background-image: url(/nebula.jpg); background-size: cover; padding: 5%;">
             @yield('content')
             </div>
         </main>

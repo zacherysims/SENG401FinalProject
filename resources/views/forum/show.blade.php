@@ -24,5 +24,5 @@
 
 @section('content')
 
-    <h1 class="page_heading"> {{$thread->title}}}</h1>
+    <h1 class="page_heading"> {{$thread->title}}</h1>
 @endsection
