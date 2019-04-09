@@ -30,3 +30,5 @@ Route::get('/picoftheday', 'PicDayController@index');
 Route::get('/forum', 'PicDayController@index');
 
 Route::get('/forum', 'ThreadController@index');
+
+Route::get('/forum/create', 'ThreadController@create');
