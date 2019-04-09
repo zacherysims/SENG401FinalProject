@@ -23,7 +23,7 @@
 @endsection
 
 @section('content')
-<div class="fullscreen" style="background-image: url(nebula.jpg); padding: 5%;">
+
 <h1 class = "page_heading">Latest Hubble News Releases</h1>                
   
    
