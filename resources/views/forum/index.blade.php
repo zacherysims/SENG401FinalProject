@@ -9,7 +9,14 @@
 
     img {
         float: left;
-        margin-right: 10px;
+        margin-right: 100%;
+    }
+
+    h3{
+      background: -webkit-linear-gradient(#eee, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 350%;
     }
 
     .btn {
@@ -26,20 +33,21 @@
 @section('content')
 <div>
     <button class="btn" onclick="location.href='/forum/create'">Create A New Thread!</button>
-    <h1 class = "page_heading">Forum</h1>  
-</div>              
+    <h1 class = "page_heading">Forum</h1>
+</div>
 @foreach($threads as $thread)
 <a href="/forum/show/{{$thread->id}}" style="text-decoration: none;"><div class = 'div_element' >
-            <h2>{{$thread->title}} <span style="float: right; font-size:10px;">Thread ID: {{$thread->str}} </span></h2>
+            <h2 style="font-size: 300%">{{$thread->title}} <span style="float:right; font-size:80%;">Thread ID: {{$thread->str}} </span></h2>
             Submitted by User: {{$thread->getUser()}}
               <br>
               <br>
             <div style=" opacity: 0.5;">
-            <h3>{{$thread->getPaddedContent()}}<span style="font-size:4px;"></span><h3>
+
+            <h3>{{$thread->getPaddedContent()}}<h3>
             </div>
+              <span style="float:right;"> click to see more </span>
             <br>
         </div>
         </a>
 @endforeach
 @endsection
-

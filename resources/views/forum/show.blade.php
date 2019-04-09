@@ -1,19 +1,33 @@
 @extends('layouts.app')
 
 @section('styles')
-    h2, p {
-        color: white;
-    }
+h2, p {
+  color: white;
+}
 
-    img {
-        float: left;
-        margin-right: 10px;
-    }
+h3 {
+  font-size: 250%
 
+}
+
+img {
+  float: left;
+  margin-right: 50%;
+}
+
+comment {
+  
+}
 @endsection
 
 @section('content')
 <div class ="div_element">
-    <h1 class="thread"> {{$thread->title}}</h1>
-    </div>
+  <h2>{{$thread->title}} <span style="float:right; font-size:80%;"> </span></h2>
+  Submitted by User: {{$thread->getUser()}}
+  <br>
+  <br>
+  <h3>{{$thread->content}}</h3>
+</div>
+<div class = "comment">
+</div>
 @endsection
