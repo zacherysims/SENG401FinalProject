@@ -38,7 +38,7 @@
 </div>         
 @elseif($type==='News')
 @foreach($items as $article)
-        <div class = 'item' data-url={{$article['link']}}>
+<a href="javascript:void(0)" style="text-decoration: none;"><div class = 'item' data-url={{$article['link']}}>
             <h2>{{$article['title']}}</h2>
             @if(count($article)===9)
                 <img src = {{$article['thumbnail']}}></img>
@@ -57,7 +57,7 @@
 </div>
 @elseif($type==='Pictures')
 @foreach($items as $picture)
-    <div class="item" data-url={{str_replace('/collection.json', '~orig.jpg',$picture['links'][0]['href'])}}>
+<a href="javascript:void(0)" style="text-decoration: none;"><div class="item" data-url={{str_replace('/collection.json', '~orig.jpg"',$picture['links'][0]['href'])}}>
         <img src={{$picture['links'][0]['href']}}></img>
         <br>
         <br>
@@ -70,7 +70,7 @@
 @section('scripts')
     $(document).ready(function() {
 
-    $('.article').click(function() {
+    $('.item').click(function() {
         window.location = $(this).data("url");
     });
 
