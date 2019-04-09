@@ -19,4 +19,13 @@ class Thread extends Model
         ])->first();
         return $user->name;
     }
+
+    public function getPaddedContent(){
+      $threadContent = DB::table('threads')->where([
+            ['id', '=', $this->id]
+      ])->first();
+      $conThread = substr($threadContent->content, 0, 100);
+      $conThread .= "...";
+      return $conThread;
+    }
 }

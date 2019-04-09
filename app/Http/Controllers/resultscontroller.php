@@ -17,7 +17,9 @@ class ResultsController extends Controller
         $query = request('query');
         
         $relevantarticles = array();
-
+        if(is_null($query)){
+            return view('search.searchview');
+        }
         if($type === 'News'){
         $url = "http://hubblesite.org/api/v3/external_feed/esa_feed";
         $rsp = file_get_contents($url);
@@ -32,13 +34,14 @@ class ResultsController extends Controller
 
             $date=date_create( $allarticles[$counter]['pub_date']);
             $allarticles[$counter]['pub_date'] = date_format($date,"F j, Y");
-            if(strpos($allarticles[$counter]['title'], $query)){
+            if(strpos($allarticles[$counter]['title'], $query)!==FALSE){
                 $relevantarticles[$relevantcounter] = $allarticles[$counter];
                 $relevantcounter++;
             }
             $counter++;
         }
-    }
+    return view('search.resultsview',['items' => $relevantarticles, 'type' => $type, 'query' => $query]);
+}
 
     else if($type === 'Forums'){
         /**
@@ -47,12 +50,13 @@ class ResultsController extends Controller
     }
 
     else if($type === "Pictures"){
-        /**
-         * When pictures is built
-         */
+       $url = "https://images-api.nasa.gov/search?keywords=";
+       $url .= urlencode($query);
+
+       $rsp = file_get_contents($url);
+       //decoding a json file
+       $pictures = json_decode($rsp, true);
+        return view('search.resultsview', ['items' => $pictures['collection']['items'], 'type' => $type, 'query' => $query]);
     }
-    
-        
-    return view('search.resultsview',['items' => $relevantarticles, 'type' => $type, 'query' => $query]);
-    }
+}
 }

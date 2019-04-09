@@ -13,6 +13,12 @@
         overflow: auto;
         padding: 10px;
     }
+
+    .picture {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
     .item:hover {background-color: #505050;}
 
     img {
@@ -32,7 +38,7 @@
 </div>         
 @elseif($type==='News')
 @foreach($items as $article)
-        <div class = 'item' data-url={{$article['link']}}>
+<a href="javascript:void(0)" style="text-decoration: none;"><div class = 'item' data-url={{$article['link']}}>
             <h2>{{$article['title']}}</h2>
             @if(count($article)===9)
                 <img src = {{$article['thumbnail']}}></img>
@@ -50,17 +56,21 @@
     <h2 style="text-align: center">IF WE HAD ANY</h2>
 </div>
 @elseif($type==='Pictures')
-<div class= 'item'>
-    <h2 style="text-align: center">This is where we would put the pictures</h2><br>
-    <h2 style="text-align: center">IF WE HAD ANY</h2>
-</div>
+@foreach($items as $picture)
+<a href="javascript:void(0)" style="text-decoration: none;"><div class="item" data-url={{str_replace('/collection.json', '~orig.jpg"',$picture['links'][0]['href'])}}>
+        <img src={{$picture['links'][0]['href']}}></img>
+        <br>
+        <br>
+        {{$picture['data'][0]['description']}}
+    </div>
+@endforeach
 @endif
 @endsection
 
 @section('scripts')
     $(document).ready(function() {
 
-    $('.article').click(function() {
+    $('.item').click(function() {
         window.location = $(this).data("url");
     });
 
