@@ -6,7 +6,7 @@
     }
 
     .searchArea {
-        background-color: #292b2d; 
+        background-color: transparent; 
         color: lightgray;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -20,12 +20,11 @@
     }
     .searchbar {
         border-radius: 100px;
-        padding: 6px;
-        padding-left: 20px;
-        width: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
         border: none;
-        margin-top: 12px;z
-        margin-right: 12px;
         font-size: 18px;
         text-indent: 1px;
     }
@@ -41,17 +40,18 @@
 @section('content')
 <h1 class = "page_heading">Search the Cosmos (or just the site)</h1>                
 
-<form class ="div_element" action="/results">
-Keyword: <br>
+<form class ="searchArea" action="/results">
 <input class="searchbar" type="text" name="query"><br>
-<span>
-<input class="coolradiobutton" style="margin-top: 20px;" type="radio" name="type" value="News" checked>News
-</span>
-<span>
-<input class="coolradiobutton" type="radio" name="type" value="Forums">Forums
-</span>
-<input class="coolradiobutton" type="radio" name="type" value="Pictures">Pictures<br>
-<input type="submit" style="margin-top: 20px; padding-left: 20px; padding-right: 20px;" name="search" value="Search">
+<div style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+    <span style=>
+    <input class="coolradiobutton" style="margin-top: 20px;" type="radio" name="type" value="News" checked>News
+    </span>
+    <span>
+    <input class="coolradiobutton" type="radio" name="type" value="Forums">Forums
+    </span>
+    <input class="coolradiobutton" type="radio" name="type" value="Pictures">Pictures<br>
+    <input class="btn" type="submit" style="margin-top: 20px; padding-left: 20px; padding-right: 20px;" name="search" value="Search">
+</div>
 </form>
 @endsection
 
