@@ -30,7 +30,7 @@ class ThreadController extends Controller
      */
     public function create()
     {
-        //
+        return view('forum.create');
     }
 
     /**
@@ -53,6 +53,8 @@ class ThreadController extends Controller
     public function show($id)
     {
         //
+        $bread = Thread::findOrFail($id);
+        return view("forum.show", compact('bread'));
     }
 
     /**

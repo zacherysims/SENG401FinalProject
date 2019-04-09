@@ -22,7 +22,7 @@
         border-radius: 100px;
         padding: 6px;
         padding-left: 20px;
-        width: 1000px;
+        width: 500px;
         border: none;
         margin-top: 12px;z
         margin-right: 12px;
@@ -39,7 +39,6 @@
 @endsection
 
 @section('content')
-<div class="fullscreen" style="background-image: url(nebula.jpg); padding: 5%;">
 <h1 class = "page_heading">Search the Cosmos (or just the site)</h1>                
 
 <form class ="searchArea" action="/results">
@@ -54,7 +53,6 @@ Keyword: <br>
 <input class="coolradiobutton" type="radio" name="type" value="Pictures">Pictures<br>
 <input type="submit" style="margin-top: 20px; padding-left: 20px; padding-right: 20px;" name="search" value="Search">
 </form>
-</div>
 @endsection
 
 @section('scripts')
