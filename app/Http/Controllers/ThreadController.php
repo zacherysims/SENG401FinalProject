@@ -53,8 +53,8 @@ class ThreadController extends Controller
     public function show($id)
     {
         //
-        $thread = Thread::findOrFail($id);
-        return view("forum.show", compact($thread));
+        $bread = Thread::findOrFail($id);
+        return view("forum.show", compact('bread'));
     }
 
     /**

@@ -112,7 +112,7 @@
         </nav>
 
         <main class="py-4" style=" margin: 0 !important; padding: 0 !important;">
-            <div class="fullscreen" style="background-image: url(nebula.jpg); background-size: cover; padding: 5%;">
+            <div class="fullscreen" style="background-image: url(/nebula.jpg); background-size: cover; padding: 5%;">
             @yield('content')
             </div>
         </main>
