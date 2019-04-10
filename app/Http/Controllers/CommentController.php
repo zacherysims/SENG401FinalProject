@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Comment;
 use App\Thread;
-use App\Http\Controllers\Auth;
-use Illuminate\Support\Facades\DB;
-class ThreadController extends Controller
+use Illuminate\Http\Request;
+
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +15,7 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        $threads = Thread::all();
-        foreach($threads as $thread) {
-            $total_number = 10;
-            $digits = $total_number - strlen($thread->id);
-            $thread->str = str_pad($thread->id, $digits, "0", STR_PAD_LEFT);
-        }
-        return view('forum.index', compact('threads'));;
+        //
     }
 
     /**
@@ -31,11 +25,7 @@ class ThreadController extends Controller
      */
     public function create()
     {
-        if (!auth()->user()){
-            return redirect('/login');
-        }
-
-        return view('forum.create');
+        //
     }
 
     /**
@@ -46,40 +36,40 @@ class ThreadController extends Controller
      */
     public function store(Request $request)
     {
+      if (!auth()->user()){
+          return redirect('/login');
+      }
         $validated = $request->validate([
-            'Title' => 'required|string|max:255',
+            'ThreadId' => 'required',
             'Content' => 'required|string|max:1024'
           ]);
-          $validated['title'] = $validated['Title'];
+          $validated['thread_id'] = $validated['ThreadId'];
           $validated['content'] = $validated['Content'];
-          unset($validated['Title']);
+          unset($validated['ThreadId']);
           unset($validated['Content']);
           $validated['user'] = auth()->user()->email;
-          Thread::create($validated);
-          return redirect('/forum');
+          Comment::create($validated);
+          return redirect('/forum/show/'.$validated['thread_id']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment)
     {
         //
-        $thread = Thread::findOrFail($id);
-        $comments = DB::table('comments')->where('thread_id','=',$id)->latest()->get();
-        return view("forum.show", ['thread' => $thread, 'comments' =>$comments]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -88,10 +78,10 @@ class ThreadController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -99,10 +89,10 @@ class ThreadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comment $comment)
     {
         //
     }

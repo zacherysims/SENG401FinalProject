@@ -20,15 +20,16 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <style>
 
-  .title {
-    color: #292b2d;
-    font-size: 84px;
-    text-align: center;
-    margin-bottom: 30px;
-    text-shadow: 0px 0px 10px white;
-    animation: mymove 25s infinite;
-
-  }
+    .title {
+        color: #292b2d;
+        font-size: 600%;
+        text-align: center;
+        margin-bottom: 30px;
+        animation: mymove 25s infinite;
+        background: -webkit-linear-gradient(black, black, lightgrey);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
   @keyframes mymove {
     0% {text-shadow: 0px 0px 10px white;}

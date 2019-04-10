@@ -13,10 +13,10 @@
     }
 
     h3{
-      background: -webkit-linear-gradient(#eee, #333);
+      background: -webkit-linear-gradient(lightgrey, grey);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 350%;
+      font-size: 125%;
     }
 
     .btn {
@@ -37,15 +37,12 @@
 </div>
 @foreach($threads as $thread)
 <a href="/forum/show/{{$thread->id}}" style="text-decoration: none;"><div class = 'div_element' >
-            <h2 style="font-size: 300%">{{$thread->title}} <span style="float:right; font-size:80%;">Thread ID: {{$thread->str}} </span></h2>
-            Submitted by User: {{$thread->getUser()}}
-              <br>
-              <br>
-            <div style=" opacity: 0.5;">
+            <h2 style="font-size: 225%">{{$thread->title}} <span style="float:right; font-size:30%;">Thread ID: {{$thread->str}} </span></h2>
+            <div>
 
             <h3>{{$thread->getPaddedContent()}}<h3>
             </div>
-              <span style="float:right;"> click to see more </span>
+              <span style="float:right;">-{{$thread->getUser()}}</span>
             <br>
         </div>
         </a>

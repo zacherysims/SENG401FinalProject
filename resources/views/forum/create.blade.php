@@ -4,7 +4,7 @@
     h2, p {
         color: lightgray;
     }
-    .div_element:hover{}
+
     input, textarea{
         width: 100%;
         background-color: #505050;
@@ -16,12 +16,25 @@
         color: white;
     }
 
+    .div_element{
+        width: 50%;
+    }
+
+    .btn{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        background-color: #0084b4;
+        opacity: 0.9;
+    }
+
 @endsection
 
 @section('content')
 <h1 class="page_heading">Create a New Thread</h1>
 <div class = 'div_element' >
-    <form method="POST" action="/forum">
+    <form autocomplete="off" method="POST" action="/forum">
         @csrf
         <div class="form-group">
         <span>Title:</span> <br><input class="form-control" name="Title" id="title" type="text"></input>
