@@ -30,7 +30,12 @@
                  @endif
                  <span style="float:right;">{{$picture['date']}}</span>
                  </p>
+                 @if(strpos($picture['url'], "youtube") != false)
+                    <iframe src={{$picture['url']}} style="width: 1000px; height: 500px;">
+                    </iframe>
+                 @else
                  <img class="picday" src={{$picture['url']}}></img>
+                 @endif
                  <br>
                  <p style="font-size: 12px; margin-top: 20px; margin-bottom: 10px;"> {{$picture['explanation']}} </p>
                  </div>
