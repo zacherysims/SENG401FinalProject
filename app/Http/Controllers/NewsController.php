@@ -13,7 +13,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        
+
         $url = "http://hubblesite.org/api/v3/external_feed/esa_feed";
         $rsp = file_get_contents($url);
         $articles = json_decode($rsp, true);
@@ -29,7 +29,31 @@ class NewsController extends Controller
             $articles[$counter]['pub_date'] = date_format($date,"F j, Y");
             $counter++;
         }
-        
-        return view('news.index',['articles' => $articles]);
+
+        $newsTitle = "Latest Hubble Telescope News";
+
+        return view('news.index',['articles' => $articles, 'newsTitle' => $newsTitle]);
     }
+
+    public function jwt()
+    {
+      $url = "http://hubblesite.org/api/v3/external_feed/jwst_feed";
+      $rsp = file_get_contents($url);
+      $articles = json_decode($rsp, true);
+      //dd($articles);
+      $counter = 0;
+      foreach($articles as $article){
+          $articles[$counter]['title'] = ucwords($articles[$counter]['title']);
+          $articles[$counter]['title'] = str_ireplace("Science Release: ", "",$articles[$counter]['title']);
+          $articles[$counter]['title'] = str_ireplace("Photo Release: ", "",$articles[$counter]['title']);
+          $articles[$counter]['title'] = str_ireplace("&amp;", "&",$articles[$counter]['title']);
+
+          $date=date_create( $articles[$counter]['pub_date']);
+          $articles[$counter]['pub_date'] = date_format($date,"F j, Y");
+          $counter++;
+    }
+    $newsTitle = "Latest James Webb Telescope News";
+
+    return view('news.index',['articles' => $articles, 'newsTitle' => $newsTitle]);
+  }
 }

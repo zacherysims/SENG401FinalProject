@@ -17,7 +17,7 @@
 
 @section('content')
 
-<h1 class = "page_heading">Latest Hubble News Releases</h1>
+<h1 class = "page_heading">{{$newsTitle}}</h1>
 
 
 @foreach($articles as $article)
