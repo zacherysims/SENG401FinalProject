@@ -67,8 +67,4 @@
     <input class="btn" type="submit" style="margin-top: 20px; padding-left: 20px; padding-right: 20px;" name="search" value="Search">
 </div>
 </form>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> c53e087a4be0229a4e0de944529d688340c3275a

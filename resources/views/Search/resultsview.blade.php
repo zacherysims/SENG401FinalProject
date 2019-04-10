@@ -26,7 +26,7 @@
 
 @if(empty($items))
     <div class="div_element" style="text-align: center">
-    <h1>We got nuthin, srry m8</h1>
+    <h1>Sorry, the search returned no results</h1>
 </div>         
 @elseif($type==='News')
 @foreach($items as $article)
@@ -43,17 +43,21 @@
         </div>
 @endforeach
 @elseif($type==='Forums')
-<div class= 'item'>
-    <h2 style="text-align: center">This is where we would put the forums</h2><br>
-    <h2 style="text-align: center">IF WE HAD ANY</h2>
-</div>
+@foreach($items as $thread)
+<a href="/forum/show/{{$thread->id}}" style="text-decoration: none;"><div class = 'div_element' >
+            <h2 style="font-size: 225%">{{$thread->title}} <span style="float:right; font-size:30%;">Thread ID: {{$thread->str}} </span></h2>
+            <div>
+
+            <h3>{{$thread->getPaddedContent()}}<h3>
+            </div>
+              <span style="float:right;">-{{$thread->getUser()}}</span>
+            <br>
+        </div>
+        </a>
+@endforeach
 @elseif($type==='Pictures')
 @foreach($items as $picture)
-<<<<<<< HEAD
-<a href="javascript:void(0)" style="text-decoration: none;"><div class="item" data-url={{str_replace('/collection.json', '~large.jpg"',$picture['href'])}}>
-=======
 <a href="javascript:void(0)" style="text-decoration: none;"><div class="div_element" data-url={{str_replace('/collection.json', '~orig.jpg"',$picture['links'][0]['href'])}}>
->>>>>>> c53e087a4be0229a4e0de944529d688340c3275a
         <img src={{$picture['links'][0]['href']}}></img>
         <br>
         <br>

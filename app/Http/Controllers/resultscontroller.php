@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Thread;
 
 class ResultsController extends Controller
 {
@@ -34,7 +35,7 @@ class ResultsController extends Controller
 
             $date=date_create( $allarticles[$counter]['pub_date']);
             $allarticles[$counter]['pub_date'] = date_format($date,"F j, Y");
-            if(strpos($allarticles[$counter]['title'], $query)!==FALSE){
+            if(strpos(strtolower($allarticles[$counter]['title']), strtolower($query))!==FALSE){
                 $relevantarticles[$relevantcounter] = $allarticles[$counter];
                 $relevantcounter++;
             }
@@ -44,7 +45,16 @@ class ResultsController extends Controller
 }
 
     else if($type === 'Forums'){
-        
+        $relevantThreads = array();
+        $threads = Thread::all();
+        $counter = 0;
+        foreach($threads as $thread){
+            if(strpos(strtolower($thread->title), strtolower($query))!==FALSE){
+                $relevantThreads[$counter] = $thread;
+                $counter++;
+            }
+        }
+    return view('search.resultsview', ['items'=> $relevantThreads, 'type'=> $type, 'query' => $query]);
     }
 
     else if($type === "Pictures"){
