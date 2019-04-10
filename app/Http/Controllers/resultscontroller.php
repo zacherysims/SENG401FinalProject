@@ -44,9 +44,7 @@ class ResultsController extends Controller
 }
 
     else if($type === 'Forums'){
-        /**
-         * When forums is built
-         */
+        
     }
 
     else if($type === "Pictures"){

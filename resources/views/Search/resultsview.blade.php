@@ -57,11 +57,13 @@
 </div>
 @elseif($type==='Pictures')
 @foreach($items as $picture)
-<a href="javascript:void(0)" style="text-decoration: none;"><div class="item" data-url={{str_replace('/collection.json', '~orig.jpg"',$picture['links'][0]['href'])}}>
+<a href="javascript:void(0)" style="text-decoration: none;"><div class="item" data-url={{str_replace('/collection.json', '~large.jpg"',$picture['href'])}}>
         <img src={{$picture['links'][0]['href']}}></img>
         <br>
         <br>
-        {{$picture['data'][0]['description']}}
+        @if(array_key_exists('description', $picture['data'][0]))
+        {!!$picture['data'][0]['description']!!}
+        @endif
     </div>
 @endforeach
 @endif

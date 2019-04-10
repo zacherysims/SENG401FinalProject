@@ -54,14 +54,3 @@ Keyword: <br>
 <input type="submit" style="margin-top: 20px; padding-left: 20px; padding-right: 20px;" name="search" value="Search">
 </form>
 @endsection
-
-@section('scripts')
-    $(document).ready(function() {
-
-    $('.article').click(function() {
-        window.location = $(this).data("url");
-    });
-
-    });
-
-@endsection
