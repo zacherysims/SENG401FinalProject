@@ -22,12 +22,13 @@
 
     .title {
         color: #292b2d;
-        font-size: 84px;
+        font-size: 600%;
         text-align: center;
         margin-bottom: 30px;
-        text-shadow: 0px 0px 10px white;
         animation: mymove 25s infinite;
-
+        background: -webkit-linear-gradient(black, black, lightgrey);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     @keyframes mymove {

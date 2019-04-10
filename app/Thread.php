@@ -12,7 +12,7 @@ class Thread extends Model
     public $timestamps = false;
     protected $table = 'threads';
 
-    
+
     public function getUser(){
         $user = DB::table('users')->where([
             ['email','=', $this->user]
@@ -24,7 +24,7 @@ class Thread extends Model
       $threadContent = DB::table('threads')->where([
             ['id', '=', $this->id]
       ])->first();
-      $conThread = substr($threadContent->content, 0, 100);
+      $conThread = substr($threadContent->content, 0, 120);
       $conThread .= "...";
       return $conThread;
     }

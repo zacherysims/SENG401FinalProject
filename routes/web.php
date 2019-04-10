@@ -32,3 +32,4 @@ Route::get('/forum', 'ThreadController@index');
 Route::get('/forum/create', 'ThreadController@create');
 Route::get('/forum/show/{id}' ,'ThreadController@show');
 Route::post('/forum', 'ThreadController@store');
+Route::post('/forum/show/{id}','CommentController@store');
