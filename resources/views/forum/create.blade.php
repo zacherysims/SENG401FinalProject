@@ -34,7 +34,7 @@
 @section('content')
 <h1 class="page_heading">Create a New Thread</h1>
 <div class = 'div_element' >
-    <form method="POST" action="/forum">
+    <form autocomplete="off" method="POST" action="/forum">
         @csrf
         <div class="form-group">
         <span>Title:</span> <br><input class="form-control" name="Title" id="title" type="text"></input>

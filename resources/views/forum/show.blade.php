@@ -36,6 +36,9 @@ comment {
 
 .btn {
   border-radius: 20px;
+  background-color: #0084b4;
+  color: lightgrey;
+  opacity: 0.9;
 }
 
 textarea{
@@ -64,8 +67,5 @@ textarea{
           <input type="hidden" name="ThreadId" value={{$thread->id}}></input>
           <input class="btn" type=submit value="Comment"></input> 
         </div>
-        <!-- <div class="form-group" style="display: inline;">
-          <input class="btn" type=submit value="Comment"></input> 
-        </div> -->
 
 @endsection
