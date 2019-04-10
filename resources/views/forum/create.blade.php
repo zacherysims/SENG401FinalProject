@@ -4,7 +4,7 @@
     h2, p {
         color: lightgray;
     }
-    .div_element:hover{}
+
     input, textarea{
         width: 100%;
         background-color: #505050;
@@ -14,6 +14,19 @@
     .form-control, .form-control:focus{
         background-color: #505050;
         color: white;
+    }
+
+    .div_element{
+        width: 50%;
+    }
+
+    .btn{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        background-color: #0084b4;
+        opacity: 0.9;
     }
 
 @endsection

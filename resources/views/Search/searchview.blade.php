@@ -19,6 +19,7 @@
         margin-right: 10px;
     }
     .searchbar {
+        opacity: 0.5;
         border-radius: 100px;
         display: block;
         margin-left: auto;
@@ -26,13 +27,24 @@
         width: 50%;
         border: none;
         font-size: 18px;
-        text-indent: 1px;
+        text-indent: 10px;
+        outline: none;
     }
 
     .coolradiobutton{
         border: none;
         padding: 10px;
         margin: 5px;
+    }
+
+    .btn {
+        background-color: #292b2d;
+        color: lightgray;
+        opacity: 0.9;
+    }
+
+    span {
+        color:  #292b2d;
     }
 
 @endsection
@@ -42,26 +54,17 @@
 
 <form class ="searchArea" action="/results">
 <input class="searchbar" type="text" name="query"><br>
-<div style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
-    <span style=>
+<div style="display: block; margin-left: auto; margin-right: auto; width: 50%; text-align: center;">
+    <span>
     <input class="coolradiobutton" style="margin-top: 20px;" type="radio" name="type" value="News" checked>News
     </span>
     <span>
     <input class="coolradiobutton" type="radio" name="type" value="Forums">Forums
     </span>
+    <span>
     <input class="coolradiobutton" type="radio" name="type" value="Pictures">Pictures<br>
+    </span>
     <input class="btn" type="submit" style="margin-top: 20px; padding-left: 20px; padding-right: 20px;" name="search" value="Search">
 </div>
 </form>
-@endsection
-
-@section('scripts')
-    $(document).ready(function() {
-
-    $('.article').click(function() {
-        window.location = $(this).data("url");
-    });
-
-    });
-
 @endsection
