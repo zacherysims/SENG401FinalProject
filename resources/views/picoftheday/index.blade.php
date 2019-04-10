@@ -24,7 +24,10 @@
                 <div class="div_element">
                  <div class="picdaycontainer">
                  <h2> {{$picture['title']}}</h2>
-                 <p style="font-size:12px; text-align: left;">{{$picture['copyright']}}
+                 <p style="font-size:12px; text-align: left;">
+                 @if(array_key_exists('copyright', $picture))
+                 {{$picture['copyright']}}
+                 @endif
                  <span style="float:right;">{{$picture['date']}}</span>
                  </p>
                  <img class="picday" src={{$picture['url']}}></img>
