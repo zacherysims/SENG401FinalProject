@@ -10,6 +10,20 @@
         margin-bottom: 20px;
         padding: 10px;
     }
+
+    .div_element2 {
+    background-color: #292b2d;
+    opacity: 0.9;
+    color: lightgray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
     .div_element:hover {background-color: #505050;}
 
     img {
@@ -30,7 +44,7 @@
 </div>         
 @elseif($type==='News')
 @foreach($items as $article)
-<a href="javascript:void(0)" style="text-decoration: none;"><div class = 'div_element' data-url={{$article['link']}}>
+<a href="javascript:void(0)" style="text-decoration: none;"><div class = 'div_element item' data-url={{$article['link']}}>
             <h2>{{$article['title']}}</h2>
             @if(count($article)===9)
                 <img src = {{$article['thumbnail']}}></img>
@@ -57,7 +71,7 @@
 @endforeach
 @elseif($type==='Pictures')
 @foreach($items as $picture)
-<a href="javascript:void(0)" style="text-decoration: none;"><div class="div_element" data-url={{str_replace('/collection.json', '~orig.jpg"',$picture['links'][0]['href'])}}>
+<div class="div_element2" data-url={{str_replace('/collection.json', '~orig.jpg"',$picture['links'][0]['href'])}}>
         <img src={{$picture['links'][0]['href']}}></img>
         <br>
         <br>

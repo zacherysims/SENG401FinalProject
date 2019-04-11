@@ -55,7 +55,7 @@ textarea{
 </div>
 
 @foreach($comments as $comment)
-<p><span> {{$comment->content}}</span><span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-{{$comment->user}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$comment->created_at}}</span></p><br>
+<p><span> {{$comment->content}}</span><span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-{{$comment->getUser()}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$comment->created_at}}</span></p><br>
 @endforeach
 
 

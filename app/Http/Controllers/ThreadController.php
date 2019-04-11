@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Thread;
+use App\Comment;
 use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\DB;
 class ThreadController extends Controller
@@ -69,7 +70,7 @@ class ThreadController extends Controller
     {
         //
         $thread = Thread::findOrFail($id);
-        $comments = DB::table('comments')->where('thread_id','=',$id)->latest()->get();
+        $comments = Comment::where('thread_id',$id)->latest()->get();
         return view("forum.show", ['thread' => $thread, 'comments' =>$comments]);
     }
 
